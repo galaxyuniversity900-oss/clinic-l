@@ -1,0 +1,58 @@
+<!doctype html>
+<!-- ============================================================
+  ClinicFlow — customizable clinic CRM dashboard (original build)
+  ------------------------------------------------------------
+  HOW TO CUSTOMIZE (quick map):
+  1. COLORS & FONTS ....... styles.css  (top of file, :root variables)
+  2. ALL TEXT / DATA ...... app.js      (DATA object at the top)
+  3. SIDEBAR MENU ......... app.js      (NAV array)
+  4. NOTHING to install ... it is pure HTML/CSS/JS, open index.html
+  ============================================================ -->
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClinicFlow — clinic CRM dashboard</title>
+  <meta name="description" content="A calm, animated clinic CRM dashboard: patient flow board, WhatsApp-style inbox, patient records, schedule, reminders, reports and settings." />
+  <!-- Fonts: swap the two families below to change the whole feel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..800&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== APP SHELL ===== -->
+  <div class="shell">
+    <!-- Sidebar (nav labels live in app.js -> NAV) -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <span class="brand__logo" aria-hidden="true"></span>
+        <span class="brand__name">ClinicFlow</span>
+      </div>
+      <nav class="nav" id="nav"></nav>
+      <div class="sidebar__foot">
+        <button class="theme-toggle" id="themeToggle" title="Toggle light / dark">
+          <span class="theme-toggle__icon">◐</span><span>Theme</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main column -->
+    <div class="main">
+      <header class="topbar">
+        <button class="topbar__burger" id="burger" aria-label="Menu">☰</button>
+        <div class="topbar__search">
+          <input id="search" type="search" placeholder="Search patients, chats…" aria-label="Search" />
+        </div>
+        <div class="topbar__actions">
+          <span class="status-chip" id="waChip">● WhatsApp connected</span>
+          <div class="avatar">DR</div>
+        </div>
+      </header>
+      <main class="view" id="view" tabindex="-1"></main>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
